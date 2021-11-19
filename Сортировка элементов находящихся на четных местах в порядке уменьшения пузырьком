@@ -30,6 +30,11 @@ for (int i=1; i < n; i += 2){
       if (Arr[j] < Arr[j+2]){ 
       swap(Arr[j], Arr[j+2]);
 
+      //if (Arr[j] < Arr[j+2]){
+         //int temp = Arr[j];     - 2 вариант
+         //Arr[j] = Arr[j + 2];
+         //Arr[j + 2] = temp;
+
         }
     }
 }
