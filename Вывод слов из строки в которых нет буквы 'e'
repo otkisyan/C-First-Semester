@@ -1,0 +1,25 @@
+#include <iostream>
+#include <string>
+#include <windows.h>
+#include <stdlib.h>
+#include <sstream>
+using namespace std;
+ 
+int main()
+{
+    string s = "We study C++ programming language first semester.", word;
+    
+    s.pop_back();
+    stringstream in (s);
+
+    
+    while (in >> word)
+    {
+        if (word.find('e') == std::string::npos)
+        cout << word << endl;            
+    }
+    
+   
+system("pause");
+return 0;
+}
