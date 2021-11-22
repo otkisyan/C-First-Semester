@@ -85,3 +85,38 @@ cout << "Сума елементів " << i << " строки: " << sumOdd << en
  system("pause");
  return 0;
 }
+
+
+//2 версия
+void task_4(const int k , const int l){
+
+    int array[k][l] = {0};
+
+    for (int i = 0 ; i < k ; i++){
+        for ( int  j = 0 ; j< l; j++){
+            array[i][j] = rand() % 10-1;
+        }
+    }
+
+    int sumPaired = 0, sumNotPaired = 0;
+    for (int i = 0 ; i < k ; i++){
+        for ( int  j = 0 ; j < l; j++){
+            if (i % 2 == 0){
+                sumPaired+=array[i][j];
+            }
+            else{
+                sumNotPaired+=array[i][j];
+            }
+        }
+    }
+
+    for (int i = 0 ; i < k ; i++){
+        for ( int  j = 0 ; j< l; j++){
+            cout<<array[i][j]<<"\t";
+        }
+        cout<<endl;
+    }
+
+    cout<<"\n sumPaired = "<<sumPaired<<endl
+    <<"\n sumNotPaired = "<<sumNotPaired<<endl;
+}
