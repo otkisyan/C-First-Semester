@@ -19,7 +19,36 @@ int main()
         cout << word << endl;            
     }
     
-   
+ /* - 2 версия
+ std::string s = "We study C++ programming language first semester.";
+    s += ' '; //safeguard;
+
+    std::string word = "";
+    for (char c : s)
+    {
+        if (c == ' ') //break of word
+        {
+            if (word != "") //word not empty
+            {
+                bool incE = false;
+                for (char c2 : word) //check for e
+                {
+                    if (c2 == 'e') {incE = true; break;}
+                }
+
+                if (!incE)
+                {
+                    std::cout << word << " ";
+                }
+
+                word = "";
+            }
+        }
+        else {word = word + c;}
+    }
+
+*/
+
 system("pause");
 return 0;
 }
