@@ -75,7 +75,7 @@ cout << endl;
 //if (Arr[j] < Arr[j+2]) swap(Arr[j], Arr[j+2]) "выдавливает" меньший элемент в конец массива (который мы после не проверяем)
 
 
-###
+### Парные по возрастанию, непарные по уменьшению
 #include <iostream>
 #include <cmath>
 #include <windows.h>
