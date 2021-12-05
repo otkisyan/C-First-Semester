@@ -5,52 +5,51 @@
 #include <iomanip>
 using namespace std;
 //Дан двумерный массив размерностью n x m. Выполнить транспонирование данного массива.
+
 const int n = 3;
 const int m = 3;
 
-
-void MatricEnter (int A[n][m], const int n, const int m);
-void MatricOutput (int A[n][m], const int n, const int m);
-void MatricTranspose (int A[n][m], const int n, const int m);
+void MatrixFill (int A[n][m], const int n, const int m);
+void MatrixOutput (int A[n][m], const int n, const int m);
+void MatrixTranspose (int A[n][m], int B[n][m], const int n, const int m);
 
 int main(){
- 
+
 SetConsoleCP(65001);
 SetConsoleOutputCP(65001);
+srand (time(NULL));
 
 int A[n][m];
+int B[n][m];
 
-MatricEnter(A, n, m);
-MatricOutput (A, n, m);
-MatricTranspose (A, n, m);
+MatrixFill(A, n, m);
+cout << "Початкова матриця" << endl;
+MatrixOutput (A, n, m);
+cout << endl;
+MatrixTranspose (A, B, n, m);
+cout << "Транспонована матриця" << endl;
 
+MatrixOutput(B, n , m);
 
  system("pause");
  return 0;
 }
 
 
-void MatricEnter(int A[n][m], const int n, const int m){
-cout << "Введіть матрицю " << n <<  " x " << m << endl;
+void MatrixFill(int A[n][m], const int n, const int m){
 
-    cout << endl;
-
-    for (int i = 0; i < n; i++)
+for (int i = 0; i < n; i++)
+{
+    for (int j = 0; j < m ; j++)
     {
-
-        for (int j = 0; j < m; j++)
-        {
-            cout << "A[" << i << j << "]: ";
-            cin >> A[i][j];
-        }
-
+        A[i][j] = rand() % 100;
     }
+    
+}
 }
 
+void MatrixOutput (int A[n][m], const int n, const int m){
 
-
-void MatricOutput (int A[n][m], const int n, const int m){
-cout << "Початкова матриця:" << endl;
    for (int i = 0; i < n; i++)
     {
         for (int j = 0; j < m; j++)
@@ -61,16 +60,18 @@ cout << "Початкова матриця:" << endl;
 }
 }
 
-void MatricTranspose (int A[n][m], const int n, const int m){
-cout << "Транспонована матриця:" << endl;
-  
+
+void MatrixTranspose (int A[n][m], int B[n][m], const int n, const int m){
     
     for (int i = 0; i < n; i++)
     {
         for (int j = 0; j < m; j++)
         {
-            cout << A[j][i] << " | ";
+           B[i][j] = A[j][i];
+           
         }
-        cout << endl;
+        
 }
 }
+
+
