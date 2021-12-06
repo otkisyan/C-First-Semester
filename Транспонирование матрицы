@@ -4,40 +4,40 @@
 #include <stdlib.h>
 #include <iomanip>
 using namespace std;
-//Дан двумерный массив размерностью n x m. Выполнить транспонирование данного массива.
-
+ 
 const int n = 3;
-const int m = 3;
-
+const int m = 4;
+ 
 void MatrixFill (int A[n][m], const int n, const int m);
-void MatrixOutput (int A[n][m], const int n, const int m);
-void MatrixTranspose (int A[n][m], int B[n][m], const int n, const int m);
-
+void MatrixOutputA (int A[n][m], const int n, const int m);
+void MatrixOutputB (int B[m][n], const int n, const int m);
+void MatrixTranspose (int A[n][m], int B[m][n], const int n, const int m);
+ 
 int main(){
-
+ 
 SetConsoleCP(65001);
 SetConsoleOutputCP(65001);
 srand (time(NULL));
-
+ 
 int A[n][m];
-int B[n][m];
-
+int B[m][n];
+ 
 MatrixFill(A, n, m);
 cout << "Початкова матриця" << endl;
-MatrixOutput (A, n, m);
+MatrixOutputA (A, n, m);
 cout << endl;
-MatrixTranspose (A, B, n, m);
+MatrixTranspose (A, B, m, n);
 cout << "Транспонована матриця" << endl;
-
-MatrixOutput(B, n , m);
-
+ 
+MatrixOutputB(B, n , m);
+ 
  system("pause");
  return 0;
 }
-
-
+ 
+ 
 void MatrixFill(int A[n][m], const int n, const int m){
-
+ 
 for (int i = 0; i < n; i++)
 {
     for (int j = 0; j < m ; j++)
@@ -47,9 +47,9 @@ for (int i = 0; i < n; i++)
     
 }
 }
-
-void MatrixOutput (int A[n][m], const int n, const int m){
-
+ 
+void MatrixOutputA (int A[n][m], const int n, const int m){
+ 
    for (int i = 0; i < n; i++)
     {
         for (int j = 0; j < m; j++)
@@ -59,9 +59,21 @@ void MatrixOutput (int A[n][m], const int n, const int m){
         cout << endl;
 }
 }
-
-
-void MatrixTranspose (int A[n][m], int B[n][m], const int n, const int m){
+ 
+void MatrixOutputB (int B[m][n], const int n, const int m){
+ 
+   for (int i = 0; i < m; i++)
+    {
+        for (int j = 0; j < n; j++)
+        {
+            cout << B[i][j] << " | ";
+        }
+        cout << endl;
+}
+}
+ 
+ 
+void MatrixTranspose (int A[n][m], int B[m][n], const int n, const int m){
     
     for (int i = 0; i < n; i++)
     {
@@ -73,5 +85,3 @@ void MatrixTranspose (int A[n][m], int B[n][m], const int n, const int m){
         
 }
 }
-
-
