@@ -86,3 +86,88 @@ void MatrixTranspose (int A[n][m], int B[m][n], const int n, const int m){
 }
 }
 
+
+--- 2 версия ---
+
+#include <iostream>
+#include <windows.h>
+
+#include <iomanip>
+ 
+using namespace std;
+ 
+const int n = 3;
+const int m = 4;
+ 
+void MatrixFill(int A[n][m]);
+ 
+void MatrixOutput(int A[n][m]);
+ 
+void MatrixOutput(int A[m][n]);
+ 
+void MatrixTranspose(int A[n][m], int B[m][n]);
+ 
+int main() {
+ 
+    SetConsoleCP(65001);
+    SetConsoleOutputCP(65001);
+    srand(time(NULL));
+ 
+    int A[n][m];
+    int B[m][n];
+ 
+    MatrixFill(A);
+    cout << "Початкова матриця" << endl;
+    MatrixOutput(A);
+    cout << endl;
+    MatrixTranspose(A, B);
+    cout << "Транспонована матриця" << endl;
+ 
+    MatrixOutput(B);
+ 
+    system("pause");
+    return 0;
+}
+ 
+ 
+void MatrixFill(int A[n][m]) {
+ 
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < m; j++) {
+            A[i][j] = rand() % 100;
+        }
+ 
+    }
+}
+ 
+void MatrixOutput(int A[n][m]) {
+ 
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < m; j++) {
+            cout << A[i][j] << " | ";
+        }
+        cout << endl;
+    }
+}
+ 
+void MatrixOutput(int A[m][n]) {
+ 
+    for (int i = 0; i < m; i++) {
+        for (int j = 0; j < n; j++) {
+            cout << A[i][j] << " | ";
+        }
+        cout << endl;
+    }
+}
+ 
+ 
+void MatrixTranspose(int A[n][m], int B[m][n]) {
+ 
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < m; j++) {
+            B[j][i] = A[i][j];
+ 
+        }
+ 
+    }
+}
