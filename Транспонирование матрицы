@@ -91,7 +91,6 @@ void MatrixTranspose (int A[n][m], int B[m][n], const int n, const int m){
 
 #include <iostream>
 #include <windows.h>
-
 #include <iomanip>
  
 using namespace std;
@@ -171,3 +170,4 @@ void MatrixTranspose(int A[n][m], int B[m][n]) {
  
     }
 }
+
